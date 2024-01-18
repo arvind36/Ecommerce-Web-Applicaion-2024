@@ -5,6 +5,7 @@ import morgan from "morgan";
 import connectDB from "./config/db.js";
 import authRoute from "./routes/authRoute.js";
 import CategoryRoutes from "./routes/CategoryRoutes.js";
+import ProductRoutes from "./routes/ProductRoutes.js";
 import cors from "cors";
 
 // Create express app
@@ -24,6 +25,7 @@ app.use(morgan("dev"));
 //routes
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/category", CategoryRoutes);
+app.use("/api/v1/product", ProductRoutes);
 
 // Rest API
 app.get("/", (req, res) => {
